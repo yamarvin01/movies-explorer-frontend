@@ -1,12 +1,11 @@
 .introduction {
-  border: 1px red solid;
   display: flex;
   justify-content: center;
-  box-sizing: border-box;
   width: 100%;
   max-width: 1280px;
-  margin: -74px;
-  padding: 74px 0 50px;
+  box-sizing: border-box;
+  margin: -74px 0 0;
+  padding: 74px 70px 50px;
   background-color: #073042;
 }
 
@@ -14,7 +13,6 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  max-width: 1140px;
 }
 
 .introduction__content {
@@ -58,4 +56,10 @@
   width: 310px;
   height: 304px;
   padding-top: 75px;
+}
+
+@media screen and (max-width: 1100px) {
+  .header {
+    padding: 18px 30px;
+  }
 }
