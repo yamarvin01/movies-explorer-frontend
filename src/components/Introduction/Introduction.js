@@ -7,8 +7,8 @@ export default function Introduction() {
     <div className="introduction">
       <div className="introduction__container">
         <div className="introduction__content">
-          <h1 className="introduction__title">Учебный&nbsp;проект&nbsp;студента факультета Веб&#8209;разработки.</h1>
-          <p className="introduction__text">Листайте&nbsp;ниже, чтобы&nbsp;узнать&nbsp;больше про&nbsp;этот&nbsp;проект и его&nbsp;создателя.</p>
+          <h1 className="introduction__title">Учебный проект студента факультета Веб&#8209;разработки.</h1>
+          <p className="introduction__text">Листайте ниже, чтобы узнать больше про этот проект и его создателя.</p>
           <button className="introduction__btn">Узнать&nbsp;больше</button>
         </div>
         <img className="introduction__img" src={imgEarth} alt="Изображение планеты Земля"></img>
