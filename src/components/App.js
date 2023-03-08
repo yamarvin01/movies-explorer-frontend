@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
     <div className="page">
-      {/* <Header/> */}
+      <Header/>
       <Switch>
         <Route exact path="/">
           <Introduction />
