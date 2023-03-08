@@ -12,7 +12,7 @@ export default function App() {
       <Header/>
       <Switch>
         <Route exact path="/">
-          <Introduction />
+          {/* <Introduction /> */}
           <h1>Route /</h1>
         </Route>
         <Route exact path="/movies">

@@ -2,9 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 0;
+  padding: 18px 30px;
   width: 100%;
   max-width: 1140px;
+  box-sizing: border-box;
   z-index: 2;
 }
 
@@ -12,9 +13,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 0;
+  padding: 18px 30px;
   width: 100%;
-  max-width: 708px;
+  box-sizing: border-box;
 }
 
 .header__content {
@@ -122,10 +123,11 @@
 @media screen and (max-width: 400px) {
   .header {
     max-width: 292px;
+    padding: 18px 14px;
   }
 
   .header-compact {
-    max-width: 292px;
+    padding: 18px 14px;
   }
 
   .header__link_type_auth {
