@@ -1,5 +1,4 @@
 .popup {
-  border: 1px blue solid;
   position: fixed;
   right: 0;
   z-index: 999;
