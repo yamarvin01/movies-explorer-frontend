@@ -1,72 +1,41 @@
-import React from "react";
+import logo from "../../images/logo.svg";
+import logoAccount from "../../images/logo-account.svg";
 import { Link, Route, Switch } from "react-router-dom";
-import logo from "../../styles/images/logo-mesto.svg";
-import { CurrentUserEmailContext } from "../../context/CurrentUserEmailContext";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+import "./Header.css";
 
-const Header = React.memo((props) => {
-  const currentUserEmail = React.useContext(CurrentUserEmailContext);
-  const [isEmailVisible, setIsEmailVisible] = React.useState(false);
-  const { width } = useWindowDimensions();
-
-  function handleClick() {
-    setIsEmailVisible(!isEmailVisible);
-  }
-
-  function handleSignOut() {
-    props.signOut();
-    setIsEmailVisible(false);
-  }
-
+export default function Header() {
   return (
-    <>
-    {(width > 700 || (width < 700 && !props.loggedIn)) &&
-      <header className="header">
-        <Link className="header__link" to="/">
-          <img className="header__logo" src={logo} alt="Логотип Mesto Russia" />
-        </Link>
-        <div className="header__content">
-          <p className="header__text">{currentUserEmail}</p>
-          <Switch>
-            <Route path="/sign-up">
-              <Link className="header__link" to="/sign-in">Войти</Link>
-            </Route>
-            <Route path="/sign-in">
-              <Link className="header__link" to="/sign-up">Регистрация</Link>
-            </Route>
-            <Route exact to="/">
-              <Link className="header__link header__link_dim" to="sign-in" onClick={props.signOut}>Выйти</Link>
-            </Route>
-          </Switch>
-        </div>
-      </header>
-    }
-
-    {width <= 700 && props.loggedIn && isEmailVisible &&
-      <div className="header__mobile">
-        <p className="header__mobile-text">{currentUserEmail}</p>
-        <Link className="header__mobile-link" to="sign-in" onClick={handleSignOut}>Выйти</Link>
-      </div>
-    }
-
-    {width <= 700 && props.loggedIn &&
-      <header className="header">
-        <Link className="header__link" to="/">
-          <img className="header__logo" src={logo} alt="Логотип Mesto Russia" />
-        </Link>
-        <img
-          className={isEmailVisible
-            ? "header__icon-close"
-            : "header__icon-group"}
-          src={isEmailVisible
-            ? require(`../../styles/images/btn-close.png`)
-            : require(`../../styles/images/icon-group.png`)}
-          onClick={handleClick}
-          alt="Кнопка показа/скрытия части контента" />
-      </header>
-    }
-    </>
+    <Switch>
+      <Route exact path="/">
+        <header className="header">
+          <Link className="header__link" to="/">
+            <img className="header__logo" src={logo} alt="Логотип Movies Explorer"/>
+          </Link>
+          <div className="header__content">
+            <Link className="header__link header__link_type_auth" to="signup">Регистрация</Link>
+            <Link className="header__link header__link_type_auth header__link_type_btn" to="signin">Войти</Link>
+          </div>
+        </header>
+      </Route>
+      <Route path={["/movies", "/saved-movies", "/profile"]}>
+        <header className="header">
+          <Link className="header__link" to="/">
+            <img className="header__logo" src={logo} alt="Логотип Movies Explorer"/>
+          </Link>
+          <div className="header__content">
+            <div className="header__container">
+              <Link className="header__link header__link_type_content" to="movies">Фильмы</Link>
+              <Link className="header__link header__link_type_content" to="saved-movies">Сохранённые фильмы</Link>
+            </div>
+            <Link className="header__account-container" to="profile">
+              <p className="header__link header__link_type_account" to="profile">Аккаунт</p>
+              <div className="header__logo-account">
+                <img className="header__logo-account-image" src={logoAccount} alt="Логотип Mesto Russia" />
+              </div>
+            </Link>
+          </div>
+        </header>
+      </Route>
+    </Switch>
   );
-});
-
-export default Header;
+}
