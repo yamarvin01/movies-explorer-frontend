@@ -1,5 +1,6 @@
 import "./PopupHeader.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import logoAccount from "../../images/logo-account.svg";
 
 export default function PopupHeader(props) {
   return (
@@ -9,11 +10,17 @@ export default function PopupHeader(props) {
         onClick={props.onClose}
       ></button>
       <div className="popup__container">
-        <Link className="popup__link" to="">Главная</Link>
-        <Link className="popup__link" to="movies">Фильмы</Link>
-        <Link className="popup__link" to="saved-movies">Сохранённые фильмы</Link>
+        <NavLink className="popup__link" activeClassName="popup__link_active" exact to="">Главная</NavLink>
+        <NavLink className="popup__link" activeClassName="popup__link_active" to="movies">Фильмы</NavLink>
+        <NavLink className="popup__link" activeClassName="popup__link_active" to="saved-movies">Сохранённые фильмы</NavLink>
       </div>
 
+      <Link className="popup__link popup__link_type_bottom" to="profile">
+        <p className="popup__text" to="profile">Аккаунт</p>
+        <div className="popup__logo-container">
+          <img className="popup__logo-account" src={logoAccount} alt="Логотип пользователь" />
+        </div>
+      </Link>
     </div>
   );
 }

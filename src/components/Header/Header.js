@@ -49,7 +49,7 @@ export default function Header() {
             <Link className="header__account-container" to="profile">
               <p className="header__link header__link_type_account" to="profile">Аккаунт</p>
               <div className="header__logo-account">
-                <img className="header__logo-account-image" src={logoAccount} alt="Логотип Mesto Russia" />
+                <img className="header__logo-account-image" src={logoAccount} alt="Логотип пользователь" />
               </div>
             </Link>
           </div>
