@@ -1,6 +1,7 @@
 import './App.css';
 import React from "react";
 import Header from "./Header/Header";
+import Introduction from "./Introduction/Introduction";
 import { Switch, Route } from "react-router-dom";
 
 export default function App() {
@@ -11,6 +12,7 @@ export default function App() {
       <Header/>
       <Switch>
         <Route exact path="/">
+          <Introduction />
           <h1>Route /</h1>
         </Route>
         <Route exact path="/movies">

@@ -1,5 +1,4 @@
 .page {
-  border: 1px red solid;
   /*Шрифт по-умолчанию для всей страницы сайта*/
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
@@ -26,7 +25,7 @@
   min-width: 320px; /*Жестко зафиксировано: сайт не может быть меньше 320px*/
   background-color: #202020;
 
-  /*Для всей страницы есть минимальный отступ 30px*/
+  /* Для всей страницы есть минимальный отступ 30px */
   box-sizing: border-box;
   padding: 0 30px;
 
