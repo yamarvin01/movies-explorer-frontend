@@ -11,7 +11,7 @@ export default function Introduction() {
           <p className="introduction__text">Листайте&nbsp;ниже, чтобы&nbsp;узнать&nbsp;больше про&nbsp;этот&nbsp;проект и его&nbsp;создателя.</p>
           <button className="introduction__btn">Узнать&nbsp;больше</button>
         </div>
-        <img className="introduction__img" src={imgEarth}></img>
+        <img className="introduction__img" src={imgEarth} alt="Изображение планеты Земля"></img>
       </div>
     </div>
     </>
