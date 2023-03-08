@@ -1,6 +1,6 @@
 # movies-explorer-frontend
 
-Основные брейкпоинты: 1100px, 800px, 400px
+Основные брейкпоинты: 1100px, 800px, 600, 400px
 
 Приложение доступно: https://movie.yamarvin01.nomoredomains.work
 
