@@ -2,6 +2,7 @@ import './App.css';
 import React from "react";
 import Header from "./Header/Header";
 import Introduction from "./Introduction/Introduction";
+import AboutProject from "./AboutProject/AboutProject";
 import { Switch, Route } from "react-router-dom";
 
 export default function App() {
@@ -9,10 +10,11 @@ export default function App() {
   return (
     <>
     <div className="page">
-      <Header/>
+      {/* <Header/> */}
       <Switch>
         <Route exact path="/">
-          <Introduction />
+          {/* <Introduction /> */}
+          <AboutProject />
           <h1>Route /</h1>
         </Route>
         <Route exact path="/movies">
