@@ -1,5 +1,4 @@
 .about-project {
-  border: 1px red solid;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -27,7 +26,6 @@
 }
 
 .about-project__content {
-  border: 1px red solid;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 26px 30px;
@@ -57,7 +55,6 @@
 }
 
 .about-project__bar-container {
-  border: 1px blue solid;
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-auto-rows: 36px;
