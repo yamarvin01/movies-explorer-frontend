@@ -6,10 +6,10 @@ import Techs from "../Techs/Techs";
 export default function Main() {
   return (
     <>
-      {/* <div className="main-container">
+      <div className="main-container">
         <Promo />
-      </div> */}
-      {/* <AboutProject /> */}
+      </div>
+      <AboutProject />
       <Techs />
     </>
   );
