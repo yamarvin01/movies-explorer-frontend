@@ -1,4 +1,4 @@
-.introduction {
+.promo {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -8,18 +8,18 @@
   background-color: #073042;
 }
 
-.introduction__container {
+.promo__container {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
 
-.introduction__content {
+.promo__content {
   display: flex;
   flex-direction: column;
 }
 
-.introduction__title {
+.promo__title {
   font-size: 50px;
   line-height: 58px;
   font-weight: 400;
@@ -28,7 +28,7 @@
   margin: 0;
 }
 
-.introduction__text {
+.promo__text {
   padding-top: 36px;
   font-weight: 400;
   font-size: 13px;
@@ -38,7 +38,7 @@
   margin: 0;
 }
 
-.introduction__btn {
+.promo__btn {
   color: #fff;
   font-size: 12px;
   line-height: 16px;
@@ -51,61 +51,61 @@
   height: 36px;
 }
 
-.introduction__img {
+.promo__img {
   width: 310px;
   height: 304px;
   padding-top: 75px;
 }
 
 @media screen and (max-width: 1100px) {
-  .introduction {
+  .promo {
     padding: 214px 50px 76px;
   }
 
-  .introduction__container {
+  .promo__container {
     flex-direction: column-reverse;
     align-items: center;
   }
 
-  .introduction__content{
+  .promo__content{
     text-align: center;
     align-items: center;
   }
 
-  .introduction__title {
+  .promo__title {
     font-size: 40px;
     line-height: 50px;
     max-width: 680px;
     padding: 48px 0 0;
   }
 
-  .introduction__text {
+  .promo__text {
     padding-top: 22px;
   }
 
-  .introduction__img {
+  .promo__img {
     padding-top: 0;
   }
 
-  .introduction__btn {
+  .promo__btn {
     margin: 92px 0 0;
   }
 
 }
 
 @media screen and (max-width: 600px) {
-  .introduction {
+  .promo {
     padding: 144px 18px 30px;
   }
 
-  .introduction__title {
+  .promo__title {
     font-size: 30px;
     line-height: 38px;
     width: 100%;
     padding: 44px 0 0;
   }
 
-  .introduction__img {
+  .promo__img {
     width: 210px;
     height: 206px;
   }
