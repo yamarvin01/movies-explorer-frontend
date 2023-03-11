@@ -1,5 +1,4 @@
 .aboutme {
-  border: 1px red solid;
   width: 100%;
   max-width: 1280px;
   box-sizing: border-box;
@@ -87,7 +86,6 @@
 }
 
 .aboutme__img-container {
-  border: 1px red solid;
   width: 100%;
   max-width: 270px;
   max-height: 327px;
