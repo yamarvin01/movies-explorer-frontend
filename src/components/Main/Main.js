@@ -9,16 +9,16 @@ import Portfolio from "../Portfolio/Portfolio";
 const Main = React.memo((props) => {
   return (
     <>
-      {/* <div className="main-container">
+      <div className="main-container">
         <Promo
           onMainContentClick={props.onMainContentClick}
         />
-      </div> */}
-      {!props.isMainContentVisible &&
+      </div>
+      {props.isMainContentVisible &&
         <>
-          {/* <AboutProject /> */}
-          {/* <Techs /> */}
-          {/* <AboutMe /> */}
+          <AboutProject />
+          <Techs />
+          <AboutMe />
           <Portfolio />
         </>
       }

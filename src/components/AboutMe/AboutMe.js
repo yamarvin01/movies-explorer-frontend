@@ -15,7 +15,7 @@ export default function AboutMe() {
             У меня есть жена и двое детей.
             Начал кодить в январе 2020 года. Сейчас работю Фронтенд разработчиков в Сбербанке, фреймворк Angular.
           </p>
-          <a className="aboutme__link" href="https://github.com/yamarvin01" target="blank">Git</a>
+          <a className="aboutme__link" href="https://github.com/yamarvin01" target="blank">Github</a>
         </div>
         <div className="aboutme__img-container">
           <img className="aboutme__img" src={imgMe} alt="Фото человека"></img>

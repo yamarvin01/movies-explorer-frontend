@@ -28,9 +28,9 @@ export default function App() {
   return (
     <>
     <div className="page">
-      {/* <Header
+      <Header
         onHeaderPopupOpen={openHeaderPopup}
-      /> */}
+      />
       <Switch>
         <Route exact path="/">
           <Main
