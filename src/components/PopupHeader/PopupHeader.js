@@ -1,8 +1,9 @@
 import "./PopupHeader.css";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import logoAccount from "../../images/logo-account.svg";
 
-export default function PopupHeader(props) {
+const PopupHeader = React.memo((props) => {
   return (
     <div className={`popup ${props.isOpen && 'popup_opened'}`}>
       <button
@@ -23,4 +24,6 @@ export default function PopupHeader(props) {
       </Link>
     </div>
   );
-}
+});
+
+export default PopupHeader;

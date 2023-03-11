@@ -1,7 +1,8 @@
 import "./Promo.css";
+import React from "react";
 import imgEarth from "../../images/img-earth.svg";
 
-export default function Promo(props) {
+const Promo = React.memo((props) => {
   return (
     <>
     <div className="promo">
@@ -16,4 +17,6 @@ export default function Promo(props) {
     </div>
     </>
   );
-}
+});
+
+export default Promo;
