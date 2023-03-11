@@ -6,13 +6,22 @@ import { Switch, Route } from "react-router-dom";
 
 export default function App() {
 
+  const [isMainContentVisible, setIsMainContentVisible] = React.useState(false);
+
+  function handleMainContentClick() {
+    setIsMainContentVisible(!isMainContentVisible);
+  }
+
   return (
     <>
     <div className="page">
       <Header />
       <Switch>
         <Route exact path="/">
-          <Main />
+          <Main
+            isMainContentVisible={isMainContentVisible}
+            onMainContentClick={handleMainContentClick}
+          />
           <h1>Route /</h1>
         </Route>
         <Route exact path="/movies">

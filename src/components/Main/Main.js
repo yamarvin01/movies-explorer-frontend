@@ -3,14 +3,20 @@ import Promo from "../Promo/Promo";
 import AboutProject from "../AboutProject/AboutProject";
 import Techs from "../Techs/Techs";
 
-export default function Main() {
+export default function Main(props) {
   return (
     <>
       <div className="main-container">
-        <Promo />
+        <Promo
+          onMainContentClick={props.onMainContentClick}
+        />
       </div>
-      {/* <AboutProject /> */}
-      {/* <Techs /> */}
+      { props.isMainContentVisible &&
+        <div>
+          <AboutProject />
+          <Techs />
+        </div>
+      }
     </>
   );
 }
