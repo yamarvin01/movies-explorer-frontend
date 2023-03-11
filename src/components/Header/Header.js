@@ -2,6 +2,7 @@ import "./Header.css";
 import React from "react";
 
 import logo from "../../images/logo.svg";
+import iconGroup from "../../images/icon-group.png";
 import Navigation from "../Navigation/Navigation";
 import { Link, Route, Switch } from "react-router-dom";
 
@@ -42,7 +43,7 @@ const Header = React.memo((props) => {
             <img className="header__icon-group"
               onClick={props.onHeaderPopupOpen}
               alt="Кнопка показа/скрытия части контента"
-              src={require(`../../images/icon-group.png`)} />
+              src={iconGroup}/>
           </header>
         </Route>
       }
