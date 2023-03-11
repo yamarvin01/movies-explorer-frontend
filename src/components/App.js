@@ -1,27 +1,42 @@
 import './App.css';
+
 import React from "react";
-import Header from "./Header/Header";
-import Main from "./Main/Main";
 import { Switch, Route } from "react-router-dom";
 
-export default function App() {
+import Header from "./Header/Header";
+import Main from "./Main/Main";
 
+import HeaderPopup from "./HeaderPopup/HeaderPopup";
+
+export default function App() {
   const [isMainContentVisible, setIsMainContentVisible] = React.useState(false);
+
+  const [isHeaderPopupOpen, setIsHeaderPopupOpen] = React.useState(false);
 
   function handleMainContentClick() {
     setIsMainContentVisible(!isMainContentVisible);
   }
 
+  function openHeaderPopup() {
+    setIsHeaderPopupOpen(true);
+  }
+
+  function closeHeaderPopup() {
+    setIsHeaderPopupOpen(false);
+  }
+
   return (
     <>
     <div className="page">
-      <Header />
+      <Header
+        onHeaderPopupOpen={openHeaderPopup}
+      />
       <Switch>
         <Route exact path="/">
-          <Main
+          {/* <Main
             isMainContentVisible={isMainContentVisible}
             onMainContentClick={handleMainContentClick}
-          />
+          /> */}
           <h1>Route /</h1>
         </Route>
         <Route exact path="/movies">
@@ -40,6 +55,11 @@ export default function App() {
           <h1>Route /signup</h1>
         </Route>
       </Switch>
+
+      <HeaderPopup
+        isOpen={isHeaderPopupOpen}
+        onClose={closeHeaderPopup}
+      />
     </div>
     </>
   );
