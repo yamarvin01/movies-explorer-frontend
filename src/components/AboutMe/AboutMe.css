@@ -19,16 +19,17 @@
   text-overflow: ellipsis;
 }
 
-.aboume__separator {
+.abotme__separator {
   height: 1px;
   width: 100%;
   background-color: #DADADA;
   margin-top: 23px;
 }
 
-.aboume__content {
-  display: flex;
-  justify-content: space-between;
+.aboutme__content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 50px;
   padding: 66px 0 0 0;
 }
 
@@ -87,15 +88,47 @@
 
 .aboutme__img-container {
   border: 1px red solid;
-  width: 270px;
-  height: 327px;
+  width: 100%;
+  max-width: 270px;
+  max-height: 327px;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .aboutme__img {
   width: 100%;
-  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 800px) {
+  .aboutme {
+    padding: 90px 50px;
+  }
+
+  .aboutme__subtitle {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .aboutme__text {
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 16px;
+  }
+
+  .aboutme__paragraph {
+    font-size: 12px;
+    line-height: 18px;
+    padding-top: 20px;
+  }
+
+  .aboutme__link {
+    padding-top: 87px;
+  }
+
+  .aboutme__content {
+    grid-template-columns: 1.5fr 1fr;
+  }
+
 }
