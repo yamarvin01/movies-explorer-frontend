@@ -3,20 +3,22 @@ import React from "react";
 import Promo from "../Promo/Promo";
 import AboutProject from "../AboutProject/AboutProject";
 import Techs from "../Techs/Techs";
+import AboutMe from "../AboutMe/AboutMe";
 
 const Main = React.memo((props) => {
   return (
     <>
-      <div className="main-container">
+      {/* <div className="main-container">
         <Promo
           onMainContentClick={props.onMainContentClick}
         />
-      </div>
-      { props.isMainContentVisible &&
-        <div>
-          <AboutProject />
-          <Techs />
-        </div>
+      </div> */}
+      { !props.isMainContentVisible &&
+        <>
+          {/* <AboutProject /> */}
+          {/* <Techs /> */}
+          <AboutMe />
+        </>
       }
     </>
   );

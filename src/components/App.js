@@ -28,15 +28,15 @@ export default function App() {
   return (
     <>
     <div className="page">
-      <Header
+      {/* <Header
         onHeaderPopupOpen={openHeaderPopup}
-      />
+      /> */}
       <Switch>
         <Route exact path="/">
-          {/* <Main
+          <Main
             isMainContentVisible={isMainContentVisible}
             onMainContentClick={handleMainContentClick}
-          /> */}
+          />
           <h1>Route /</h1>
         </Route>
         <Route exact path="/movies">
