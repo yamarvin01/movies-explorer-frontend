@@ -30,15 +30,6 @@ export default function AboutMe() {
         <div className="aboutme__img-container">
           <img className="aboutme__img" src={imgMe} alt="Изображение меня"></img>
         </div>
-        <div className="aboutme__img-container">
-          <img className="aboutme__img" src={imgMe} alt="Изображение меня"></img>
-        </div>
-        <div className="aboutme__img-container">
-          <img className="aboutme__img" src={imgMe} alt="Изображение меня"></img>
-        </div>
-        <div className="aboutme__img-container">
-          <img className="aboutme__img" src={imgMe} alt="Изображение меня"></img>
-        </div>
       </div>
     </div>
   );

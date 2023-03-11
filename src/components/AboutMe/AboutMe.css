@@ -132,3 +132,53 @@
   }
 
 }
+
+@media screen and (max-width: 400px) {
+  .aboutme {
+    padding: 70px 14px;
+  }
+
+  .aboutme__title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .abotme__separator {
+    margin-top: 28px;
+  }
+
+  .aboutme__content {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding-top: 60px;
+    gap: 0;
+  }
+
+  .aboutme__img-container {
+    max-width: 100%;
+    max-height: 352px;
+  }
+
+  .aboutme__subtitle {
+    padding-top: 40px;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .aboutme__text {
+    padding-top: 20px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .aboutme__paragraph {
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .aboutme__link {
+    padding-top: 40px;
+  }
+
+}
