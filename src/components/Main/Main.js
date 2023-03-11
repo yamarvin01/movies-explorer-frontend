@@ -9,8 +9,8 @@ export default function Main() {
       <div className="main-container">
         <Promo />
       </div>
-      <AboutProject />
-      <Techs />
+      {/* <AboutProject /> */}
+      {/* <Techs /> */}
     </>
   );
 }
