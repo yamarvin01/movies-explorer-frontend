@@ -1,66 +1,53 @@
-import React from "react";
+import "./Register.css";
+import logo from "../../images/logo.svg";
 import { Link } from "react-router-dom";
 
-const Register = React.memo((props) => {
-  const [email, setEmail] = React.useState('');
-  const [password, setPassword] = React.useState('');
-
-  function handleEmailChange(evt) {
-    setEmail(evt.target.value);
-  }
-
-  function handlePasswordChange(evt) {
-    setPassword(evt.target.value);
-  }
-
-  function handleSubmit(evt) {
-    evt.preventDefault();
-    props.onRegister(email, password);
-  }
-
+export default function Register() {
   return (
-    <div className="register">
-      <h2 className="register__title">Регистрация</h2>
-      <form className="register__form" onSubmit={handleSubmit} name={"register"}>
-        <label htmlFor="email">
-          <input
-            className="register__input"
-            onChange={handleEmailChange}
-            value={email}
-            name="email"
-            type="email"
-            placeholder="Email"
-            id="email"
-            required
-          />
-          <span className="email-input-error popup__error"></span>
-        </label>
-        <label htmlFor="password">
-          <input
-            className="register__input"
-            onChange={handlePasswordChange}
-            value={password}
-            name="password"
-            type="password"
-            placeholder="Пароль"
-            id="password"
-            required
-          />
-          <span className="password-input-error popup__error"></span>
-        </label>
-        <button
-          className="register__button"
-          type="submit"
-          aria-label="Зарегистрироваться"
-        >
-          Зарегистрироваться
-        </button>
-      </form>
-      <div className="register__hint">
-        <Link className="register__hint-title" to="/sign-in" >Уже зарегистрированы? Войти</Link>
+    <section className="register">
+      <div className="register__container">
+        <img className="register__logo" src={logo} alt="Логотип Movies Explorer"/>
+        <h2 className="register__greeting">Добро пожаловать!</h2>
+        <form className="register__form">
+          <label className="register__label" for="name">Имя
+            <input className="register__input"
+              id="name"
+              name="name"
+              type="text"
+              minLength="2"
+              maxLength="30"
+              required
+              placeholder="Имя"
+            ></input>
+          </label>
+          <label className="register__label" for="email">E-mail
+            <input className="register__input"
+              id="email"
+              name="email"
+              type="email"
+              required
+              placeholder="E-mail"
+            ></input>
+          </label>
+          <label className="register__label" for="password">Пароль
+            <input className="register__input"
+              id="password"
+              name="password"
+              type="password"
+              required
+              placeholder="Пароль"
+            ></input>
+          </label>
+          <button className="register__button"
+            type="submit"
+            aria-label="Кнопка зарегестрироваться">Зарегистрироваться
+          </button>
+        </form>
+        <div className="register__footer-container">
+          <p className="register__text register__text_type_secondary">Уже зарегистрированы?</p>
+          <Link className="register__text register__text_type_link" to="signin">Войти</Link>
+        </div>
       </div>
-    </div>
+    </section>
   );
-});
-
-export default Register;
+}

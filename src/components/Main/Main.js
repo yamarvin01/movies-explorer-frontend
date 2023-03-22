@@ -1,54 +1,29 @@
+import "./Main.css";
 import React from "react";
-import Card from "../Card/Card.js";
-import { CurrentUserContext } from "../../context/CurrentUserContext.js";
+import Promo from "../Promo/Promo";
+import AboutProject from "../AboutProject/AboutProject";
+import Techs from "../Techs/Techs";
+import AboutMe from "../AboutMe/AboutMe";
+import Portfolio from "../Portfolio/Portfolio";
 
-export default function Main(props) {
-  const currentUser = React.useContext(CurrentUserContext);
-
+const Main = React.memo((props) => {
   return (
-    <main className="content">
-      <section className="profile">
-        <div className="profile__avatar-section">
-          <img
-            className="profile__avatar"
-            alt="Аватар"
-            src={currentUser.avatar}
-          />
-          <button
-            onClick={props.onEditAvatar}
-            className="profile__avatar-button"
-            type="button"
-            aria-label="Кнопка редактирования аватара"
-          ></button>
-        </div>
-        <div className="profile__edit">
-          <h1 className="profile__title">{currentUser.name}</h1>
-          <button
-            onClick={props.onEditProfile}
-            className="profile__button-edit"
-            type="button"
-            aria-label="Кнопка редактирования профиля"
-          ></button>
-        </div>
-        <p className="profile__subtitle">{currentUser.about}</p>
-        <button
-          onClick={props.onAddPlace}
-          className="profile__button-add"
-          type="button"
-          aria-label="Кнопка добавления карточки"
-        ></button>
-      </section>
-      <section className="cards">
-        {props.cards.map((card) => (
-          <Card
-            card={card}
-            key={card._id}
-            onCardClick={props.onCardClick}
-            onCardLike={props.onCardLike}
-            onCardDelete={props.onCardDelete}
-          />
-        ))}
-      </section>
+    <main className="main">
+      <div className="main-container">
+        <Promo
+          onMainContentClick={props.onMainContentClick}
+        />
+      </div>
+      {props.isMainContentVisible &&
+        <>
+          <AboutProject />
+          <Techs />
+          <AboutMe />
+          <Portfolio />
+        </>
+      }
     </main>
   );
-}
+});
+
+export default Main;

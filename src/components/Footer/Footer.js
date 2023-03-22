@@ -1,13 +1,27 @@
-import React from "react";
+import "./Footer.css";
 
-const Footer = React.memo(() => {
+export default function Footer() {
   return (
     <footer className="footer">
-      <p className="footer__copyright">
-        &copy; {new Date().getFullYear()} Mesto Russia
-      </p>
+      <h2 className="footer__title">Учебный проект Яндекс.Практикум х BeatFilm.</h2>
+      <div className="footer__separator"></div>
+      <div className="footer__container">
+        <p className="footer__paragraph">&copy; {new Date().getFullYear()}</p>
+        <div className="footer__links">
+          <a className="footer__text footer__text_type_link"
+            href="https://practicum.yandex.ru"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Яндекс.Практикум
+          </a>
+          <a className="footer__text footer__text_type_link"
+            href="https://github.com/"
+            target="_blank"
+            rel="noreferrer"
+          >Github</a>
+        </div>
+      </div>
     </footer>
   );
-});
-
-export default Footer;
+}
