@@ -1,0 +1,28 @@
+.saved-movies {
+  width: 100%;
+  padding: 70px 70px 0;
+  box-sizing: border-box;
+}
+
+.saved-movies__separator {
+  height: 1px;
+  background-color: #aaa;
+  opacity: .2;
+}
+
+.saved-movies__space {
+  width: 100%;
+  padding-bottom: 140px;
+}
+
+@media screen and (max-width: 800px) {
+  .saved-movies {
+    padding: 70px 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .saved-movies {
+    padding: 70px 14px 0;
+  }
+}

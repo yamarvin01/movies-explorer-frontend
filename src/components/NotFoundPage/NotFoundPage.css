@@ -1,0 +1,76 @@
+.notfoundpage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0 30px 0;
+  box-sizing: border-box;
+}
+
+.notfoundpage__title {
+  font-size: 140px;
+  font-weight: 400;
+  line-height: 169px;
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notfoundpage__text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  text-align: center;
+  margin: 0;
+  white-space: nowrap;
+  width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notfoundpage__link {
+  margin-top: 184px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  text-align: center;
+  color: #4285F4;
+  max-width: 300px;
+  width: 80%;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.notfoundpage__link:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 600px) {
+  .notfoundpage__title {
+    font-size: 80px;
+    line-height: 97px;
+    width: 100%;
+  }
+
+  .notfoundpage__text {
+    font-size: 12px;
+    line-height: 15px;
+    padding-top: 10px;
+    width: 100%;
+  }
+
+  .notfoundpage__link {
+    font-size: 12px;
+    line-height: 15px;
+    width: 100%;
+  }
+
+}
