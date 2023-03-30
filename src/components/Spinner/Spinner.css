@@ -1,0 +1,32 @@
+.spinner-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 61px 0 11px;
+}
+
+.spinner-container_type_visible {
+  display: flex;
+}
+
+.spinner {
+  height: 50px;
+  width: 50px;
+  border-left: 4px solid rgb(43 224 128);
+  border-bottom: 4px solid rgb(43 224 128);
+  border-right: 4px solid rgb(43 224 128);
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(360deg);
+  }
+}
