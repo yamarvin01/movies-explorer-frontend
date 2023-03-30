@@ -62,12 +62,15 @@ const Profile = React.memo((props) => {
               ></input>
             </label>
             <span className="profile__error">{ errors.email }</span>
-            <button className={`profile__btn ${!isValid && 'profile__btn_disabled'}`}
-              type="submit"
-              aria-label="Кнопка редактировать профиль"
-              disabled={!isValid}
-            >Редактировать
-            </button>
+            <div className="profile__edit-container">
+              <div className="profile__message">{props.message}</div>
+              <button className={`profile__btn ${!isValid && 'profile__btn_disabled'}`}
+                type="submit"
+                aria-label="Кнопка редактировать профиль"
+                disabled={!isValid}
+              >Редактировать
+              </button>
+            </div>
           </form>
         </div>
         <div className="profile__edit">

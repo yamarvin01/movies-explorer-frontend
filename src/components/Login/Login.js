@@ -28,6 +28,7 @@ const Login = React.memo((props) => {
               name="email"
               type="email"
               placeholder="E-mail"
+              autoComplete="off"
               required
             ></input>
             <span className="login__error">{ errors.email }</span>
@@ -38,6 +39,7 @@ const Login = React.memo((props) => {
               name="password"
               type="password"
               placeholder="Пароль"
+              autoComplete="off"
               required
             ></input>
             <span className="login__error">{ errors.password }</span>

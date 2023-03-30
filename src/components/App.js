@@ -44,6 +44,7 @@ export default function App() {
   const [pageSize, setPageSize] = React.useState(12);
   const [registerErrorMessage, setRegisterErrorMessage] = React.useState('');
   const [signInErrorMessage, setSignInErrorMessage] = React.useState('');
+  const [editProfileMessage, setEditProfileMessage] = React.useState('');
 
   const [isShortMovies, setIsShortMovies] = React.useState(false);
   const [isShortSavedMovies, setIsShortSavedMovies] = React.useState(false);
@@ -228,14 +229,30 @@ export default function App() {
   }
 
   function editProfile({ name, email }) {
+    setEditProfileMessage('');
     if (currentUser.name === name && currentUser.email === email) {
+      setEditProfileMessage('Измените имя или адрес электронной почты');
+      setTimeout(() => {
+        setEditProfileMessage('');
+      }, 5000);
       return;
     }
     mainApi.editUserInfo({ name, email }, token)
-    .then(res => {
-      setCurrentUser(res);
-    })
-    .catch(err => console.log(err));
+      .then(res => {
+        setEditProfileMessage('Данные успешно отредактированы');
+        setCurrentUser(res);
+      })
+      .catch(err => {
+        if (err === 'Ошибка: 409') {
+          setEditProfileMessage('Пользователь с таким email уже существует');
+        } else {
+          setEditProfileMessage('При регистрации пользователя произошла ошибка');
+        }
+      }
+    );
+    setTimeout(() => {
+      setEditProfileMessage('');
+    }, 5000);
   }
 
   function onShortMovies(isShortMovies) {
@@ -297,6 +314,7 @@ export default function App() {
             component={Profile}
             loggedIn={loggedIn}
             onEditProfile={editProfile}
+            message={editProfileMessage}
             signOut={signOut}
           />
           <Route path="/signup">

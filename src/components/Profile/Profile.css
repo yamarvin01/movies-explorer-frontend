@@ -90,6 +90,21 @@
   text-align: right;
 }
 
+.profile__edit-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-content: center;
+  justify-items: center;
+}
+
+.profile__message {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #3456F3;
+  align-self: end;
+}
+
 .profile__btn {
   font-size: 13px;
   font-weight: 400;
