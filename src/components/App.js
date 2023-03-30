@@ -54,11 +54,9 @@ export default function App() {
 
   React.useEffect(() => {
     if (loggedIn) {
-      if (!currentUser) {
-        mainApi.getUserInfo(token)
-          .then(res => setCurrentUser(res))
-          .catch(err => console.log(err));
-      }
+      mainApi.getUserInfo(token)
+        .then(res => setCurrentUser(res))
+        .catch(err => console.log(err));
 
       mainApi.getSavedMovies(token)
         .then(res => setSavedMovies(res))
