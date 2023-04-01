@@ -59,7 +59,11 @@ export default function App() {
         .catch(err => console.log(err));
 
       mainApi.getSavedMovies(token)
-        .then(res => setSavedMovies(res))
+        .then(res => {
+          setSavedMovies(res);
+          localStorage.setItem('savedMovies', JSON.stringify(res));
+          debugger;
+        })
         .catch(err => console.log(err));
 
     } else {
@@ -162,6 +166,7 @@ export default function App() {
         }
         localStorage.setItem('search', searchPhrase);
         localStorage.setItem('movies', JSON.stringify(searchResult));
+        localStorage.setItem('isShortMoviesOnly', isShortMovies);
         setIsSpinner(false);
         setMovies(searchResult);
         if (searchResult.length === 0) {
@@ -193,7 +198,8 @@ export default function App() {
           searchResult = searchResult.filter((movie) => movie.duration < 40);
         }
         localStorage.setItem('savedMoviesSearch', savedMoviesSearchPhrase);
-        localStorage.setItem('savedMoviesSearchResult', JSON.stringify(searchResult));
+        localStorage.setItem('savedMovies', JSON.stringify(searchResult));
+        localStorage.setItem('isShortMoviesOnly', isShortSavedMovies);
         setIsSavedMoviesSpinner(false);
         setSavedMovies(searchResult);
         if (searchResult.length === 0) {
@@ -214,6 +220,9 @@ export default function App() {
       mainApi.createMovie(movie, token)
         .then(res => {
           savedMovies.push(res);
+          const movies = JSON.parse(localStorage.getItem('savedMovies'));
+          movies.push(res);
+          console.log(movies);
         })
         .catch(err => console.log(err));
     } else {
@@ -263,10 +272,27 @@ export default function App() {
 
   function onShortMovies(isShortMovies) {
     setIsShortMovies(isShortMovies);
+    const localStorageMovies = localStorage.getItem('movies');
+    const movies = JSON.parse(localStorageMovies);
+    if (isShortMovies) {
+      const filter = movies.filter((movie) => movie.duration < 40);
+      setMovies(filter);
+    } else {
+      setMovies(movies);
+    }
   }
 
   function onShortSavedMovies(isShortMovies) {
     setIsShortSavedMovies(isShortMovies);
+    const localStorageSavedMovies = localStorage.getItem('savedMovies');
+    const movies = JSON.parse(localStorageSavedMovies);
+    debugger;
+    if (isShortMovies) {
+      const filter = movies.filter((movie) => movie.duration < 40);
+      setSavedMovies(filter);
+    } else {
+      setSavedMovies(movies);
+    }
   }
 
   return (
