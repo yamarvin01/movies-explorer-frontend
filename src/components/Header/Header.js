@@ -11,17 +11,21 @@ import useWindowDimensions from "../../hooks/useWindowDimensions";
 const Header = React.memo((props) => {
   const { width } = useWindowDimensions();
   return (
-    <>
     <Switch>
       <Route exact path="/">
         <header className="header">
           <Link className="header__link-logo" to="/">
             <img className="header__logo" src={logo} alt="Логотип Movies Explorer"/>
           </Link>
-          <div className="header__content">
-            <Link className="header__link header__link_type_auth" to="signup">Регистрация</Link>
-            <Link className="header__link header__link_type_auth header__link_type_btn" to="signin">Войти</Link>
-          </div>
+          { props.loggedIn &&
+            <Navigation />
+          }
+          { !props.loggedIn &&
+            <div className="header__content">
+              <Link className="header__link header__link_type_auth" to="signup">Регистрация</Link>
+              <Link className="header__link header__link_type_auth header__link_type_btn" to="/movies">Войти</Link>
+            </div>
+          }
         </header>
       </Route>
       {(width > 800) &&
@@ -48,7 +52,6 @@ const Header = React.memo((props) => {
         </Route>
       }
     </Switch>
-    </>
   );
 });
 

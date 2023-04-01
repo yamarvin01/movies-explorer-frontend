@@ -1,35 +1,56 @@
 import "./Login.css";
+import React from "react";
 import logo from "../../images/logo.svg";
 import { Link } from "react-router-dom";
+import { useFormWithValidation } from "../Validation/Validation";
 
-export default function Login() {
+const Login = React.memo((props) => {
+  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
+
+  function handleFormChange(evt) {
+    handleChange(evt);
+  }
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    props.onSignIn(values);
+  }
+
   return (
     <section className="login">
       <div className="login__container">
-        <img className="login__logo" src={logo} alt="Логотип Movies Explorer"/>
+        <Link className="header__link-logo" to="/">
+          <img className="login__logo" src={logo} alt="Логотип Movies Explorer"/>
+        </Link>
         <h2 className="login__greeting">Рады видеть!</h2>
-        <form className="login__form">
-          <label className="login__label" for="email">E-mail
+        <form className="login__form" onSubmit={handleSubmit} onChange={handleFormChange} name={"login"}>
+          <label className="login__label" htmlFor="email">E-mail
             <input className="login__input"
               id="email"
               name="email"
               type="email"
-              required
               placeholder="E-mail"
+              autoComplete="off"
+              required
             ></input>
+            <span className="login__error">{ errors.email }</span>
           </label>
-          <label className="login__label" for="password">Пароль
+          <label className="login__label" htmlFor="password">Пароль
             <input className="login__input"
               id="password"
               name="password"
               type="password"
-              required
               placeholder="Пароль"
+              autoComplete="off"
+              required
             ></input>
+            <span className="login__error">{ errors.password }</span>
           </label>
-          <button className="login__button"
+          <span className="login__error login__error_type_common">{props.signInErrorMessage}</span>
+          <button className={`login__button ${(!isValid || props.isSignInHold) && 'login__button_type_disabled'}`}
             type="submit"
-            aria-label="Кнопка зарегестрироваться">Войти
+            aria-label="Кнопка зарегестрироваться"
+            disabled={!isValid || props.isSignInHold}>Войти
           </button>
         </form>
         <div className="login__footer-container">
@@ -39,4 +60,6 @@ export default function Login() {
       </div>
     </section>
   );
-}
+});
+
+export default Login;

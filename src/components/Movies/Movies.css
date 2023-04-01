@@ -17,6 +17,10 @@
   padding: 50px 0 80px;
 }
 
+.movies__btn-container_type_hidden {
+  display: none;
+}
+
 .movies__btn {
   width: 320px;
   height: 36px;

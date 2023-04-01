@@ -1,22 +1,34 @@
 import "./Navigation.css";
 
 import logoAccount from "../../images/logo-account.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navigation() {
 
   return (
     <div className="navigation">
       <div className="navigation__container">
-        <Link className="navigation__link" to="movies">Фильмы</Link>
-        <Link className="navigation__link" to="saved-movies">Сохранённые фильмы</Link>
+        <NavLink
+          className="navigation__link"
+          activeClassName="navigation__link_active"
+          to="movies">Фильмы
+        </NavLink>
+        <NavLink
+          className="navigation__link"
+          activeClassName="navigation__link_active"
+          to="saved-movies">Сохранённые фильмы
+        </NavLink>
       </div>
-      <Link className="navigation__account-container" to="profile">
+      <NavLink
+        className="navigation__account-container"
+        activeClassName="navigation__account-container_active"
+        to="profile"
+      >
         <p className="navigation__link navigation__link_type_account" to="profile">Аккаунт</p>
         <div className="navigation__logo-account">
           <img className="navigation__logo-account-image" src={logoAccount} alt="Логотип пользователь" />
         </div>
-      </Link>
+      </NavLink>
     </div>
   );
 

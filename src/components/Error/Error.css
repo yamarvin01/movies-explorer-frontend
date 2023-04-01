@@ -1,0 +1,22 @@
+.error-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 640px;
+  text-align: center;
+  padding: 80px 0 30px;
+  margin: 0 auto;
+}
+
+.error-container_type_visible {
+  display: flex;
+}
+
+.error-text {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+}
