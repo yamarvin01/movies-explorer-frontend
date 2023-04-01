@@ -19,7 +19,9 @@ const Login = React.memo((props) => {
   return (
     <section className="login">
       <div className="login__container">
-        <img className="login__logo" src={logo} alt="Логотип Movies Explorer"/>
+        <Link className="header__link-logo" to="/">
+          <img className="login__logo" src={logo} alt="Логотип Movies Explorer"/>
+        </Link>
         <h2 className="login__greeting">Рады видеть!</h2>
         <form className="login__form" onSubmit={handleSubmit} onChange={handleFormChange} name={"login"}>
           <label className="login__label" htmlFor="email">E-mail

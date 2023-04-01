@@ -19,7 +19,9 @@ const Register = React.memo((props) => {
   return (
     <section className="register">
       <div className="register__container">
-        <img className="register__logo" src={logo} alt="Логотип Movies Explorer"/>
+        <Link className="header__link-logo" to="/">
+          <img className="register__logo" src={logo} alt="Логотип Movies Explorer"/>
+        </Link>
         <h2 className="register__greeting">Добро пожаловать!</h2>
         <form className="register__form"
           onSubmit={handleSubmit}

@@ -299,6 +299,7 @@ export default function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <Header
+          loggedIn={loggedIn}
           onHeaderPopupOpen={openHeaderPopup}
         />
         <Switch>
@@ -363,10 +364,7 @@ export default function App() {
             <NotFoundPage />
           </Route>
         </Switch>
-
-
         <HeaderPopup
-          loggedIn={loggedIn}
           isOpen={isHeaderPopupOpen}
           onClose={closeHeaderPopup}
         />
