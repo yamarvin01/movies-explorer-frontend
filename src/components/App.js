@@ -86,7 +86,9 @@ export default function App() {
   function register({ name, email, password }) {
     setRegisterErrorMessage('');
     auth.register(name, email, password)
-      .then(() => history.push('/signin'))
+      .then(() => {
+        signIn({ email, password });
+      })
       .catch((err) => {
         if (err === 'Ошибка: 409 Conflict') {
           setRegisterErrorMessage('Пользователь с таким email уже существует');
@@ -116,6 +118,12 @@ export default function App() {
   function signOut() {
     localStorage.removeItem('token');
     setLoggedIn(false);
+    setMovies([]);
+    setSavedMovies([]);
+    setIsShortMovies(false);
+    setIsShortSavedMovies(false);
+    setSearchPhrase('');
+    setSavedMoviesSearchPhrase('');
   }
 
   async function tokenCheck() {
