@@ -67,6 +67,7 @@ export default function App() {
     } else {
       tokenCheck();
     }
+    console.log(loggedIn);
   }, [loggedIn]);
 
   function onPageSizeChange() {
