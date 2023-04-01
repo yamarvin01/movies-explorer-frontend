@@ -332,6 +332,7 @@ export default function App() {
 
 
         <HeaderPopup
+          loggedIn={loggedIn}
           isOpen={isHeaderPopupOpen}
           onClose={closeHeaderPopup}
         />

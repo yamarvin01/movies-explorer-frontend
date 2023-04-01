@@ -1,16 +1,17 @@
 .profile {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  justify-items: center;
   align-items: center;
   height: calc(100vh - 74px);
   width: 100%;
+  max-width: 1280px;
   box-sizing: border-box;
   padding: 0 30px 0;
 }
 
 .profile__container {
   display: grid;
-  grid-template-rows: 1fr;
+  grid-template-rows: 1fr min-content;
   height: 482px;
   box-sizing: border-box;
   width: 100%;
@@ -80,6 +81,10 @@
   height: 25px;
 }
 
+.profile__input:focus-visible {
+  text-align: left;
+}
+
 .profile__error {
   color: #ff3055;
   font-size: 10px;
@@ -87,7 +92,7 @@
   line-height: 12px;
   padding: 10px 0;
   box-sizing: border-box;
-  text-align: right;
+  text-align: left;
 }
 
 .profile__edit-container {
