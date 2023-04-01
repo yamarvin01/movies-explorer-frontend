@@ -62,7 +62,6 @@ export default function App() {
         .then(res => {
           setSavedMovies(res);
           localStorage.setItem('savedMovies', JSON.stringify(res));
-          debugger;
         })
         .catch(err => console.log(err));
 
@@ -285,8 +284,7 @@ export default function App() {
   function onShortSavedMovies(isShortMovies) {
     setIsShortSavedMovies(isShortMovies);
     const localStorageSavedMovies = localStorage.getItem('savedMovies');
-    const movies = JSON.parse(localStorageSavedMovies);
-    debugger;
+    const movies = JSON.parse(localStorageSavedMovies);=
     if (isShortMovies) {
       const filter = movies.filter((movie) => movie.duration < 40);
       setSavedMovies(filter);
