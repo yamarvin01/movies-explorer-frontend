@@ -5,9 +5,7 @@ const ProtectedRouteWithFooter = ({ component: Component, ...props }) => {
   return (
     <Route>
       {() =>
-        props.loggedIn
-          ? <><Component {...props} /><Footer /></>
-          : <Redirect to="/signin" />
+        props.loggedIn ? <><Component {...props} /><Footer /></> : <Redirect to="/signin" />
       }
     </Route>
   );

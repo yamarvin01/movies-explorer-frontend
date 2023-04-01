@@ -49,7 +49,6 @@ export default function App() {
   const [isShortMovies, setIsShortMovies] = React.useState(false);
   const [isShortSavedMovies, setIsShortSavedMovies] = React.useState(false);
 
-
   const history = useHistory();
 
   React.useEffect(() => {
@@ -137,7 +136,6 @@ export default function App() {
           setLoggedIn(true);
           setToken(token);
           setCurrentUser(userData);
-          history.push("/movies");
           return userData;
         })
         .catch((err) => {
@@ -284,7 +282,7 @@ export default function App() {
   function onShortSavedMovies(isShortMovies) {
     setIsShortSavedMovies(isShortMovies);
     const localStorageSavedMovies = localStorage.getItem('savedMovies');
-    const movies = JSON.parse(localStorageSavedMovies);=
+    const movies = JSON.parse(localStorageSavedMovies);
     if (isShortMovies) {
       const filter = movies.filter((movie) => movie.duration < 40);
       setSavedMovies(filter);
