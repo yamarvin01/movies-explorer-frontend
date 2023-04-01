@@ -49,6 +49,8 @@ export default function App() {
   const [isShortMovies, setIsShortMovies] = React.useState(false);
   const [isShortSavedMovies, setIsShortSavedMovies] = React.useState(false);
 
+  const [isSignInHold, setIsSignInHold] = React.useState(false);
+
   const history = useHistory();
 
   React.useEffect(() => {
@@ -103,6 +105,7 @@ export default function App() {
   }
 
   function signIn({ email, password }) {
+    setIsSignInHold(true);
     auth.authorize(email, password)
       .then((data) => {
         localStorage.setItem("token", data.token);
@@ -115,6 +118,9 @@ export default function App() {
           setSignInErrorMessage('Вы ввели неправильный логин или пароль');
         }
         console.log(err);
+      })
+      .finally(() => {
+        setIsSignInHold(false);
       });
   }
 
@@ -355,6 +361,7 @@ export default function App() {
           <Route path="/signin">
             <Login onSignIn={signIn}
               signInErrorMessage={signInErrorMessage}
+              isSignInHold={isSignInHold}
             />
           </Route>
           <Route path="*">

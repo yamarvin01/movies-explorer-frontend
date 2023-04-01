@@ -47,9 +47,10 @@ const Login = React.memo((props) => {
             <span className="login__error">{ errors.password }</span>
           </label>
           <span className="login__error login__error_type_common">{props.signInErrorMessage}</span>
-          <button className={`login__button ${!isValid && 'login__button_type_disabled'}`}
+          <button className={`login__button ${(!isValid || props.isSignInHold) && 'login__button_type_disabled'}`}
             type="submit"
-            aria-label="Кнопка зарегестрироваться">Войти
+            aria-label="Кнопка зарегестрироваться"
+            disabled={!isValid || props.isSignInHold}>Войти
           </button>
         </form>
         <div className="login__footer-container">
